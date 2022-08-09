@@ -7,21 +7,51 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		99A99FB162736D4FF19151FC /* Pods_MangaApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 583C61DEB416D5FFED3EDDDE /* Pods_MangaApp.framework */; };
 		A31582DC28A2A8EA0052DDF3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A31582DB28A2A8EA0052DDF3 /* AppDelegate.swift */; };
-		A31582E028A2A8EA0052DDF3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A31582DF28A2A8EA0052DDF3 /* ViewController.swift */; };
-		A31582E328A2A8EA0052DDF3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A31582E128A2A8EA0052DDF3 /* Main.storyboard */; };
+		A31582E028A2A8EA0052DDF3 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A31582DF28A2A8EA0052DDF3 /* SignInViewController.swift */; };
 		A31582E528A2A8EB0052DDF3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A31582E428A2A8EB0052DDF3 /* Assets.xcassets */; };
 		A31582E828A2A8EB0052DDF3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A31582E628A2A8EB0052DDF3 /* LaunchScreen.storyboard */; };
+		A31582F328A2AC760052DDF3 /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A31582F228A2AC760052DDF3 /* BaseView.swift */; };
+		A31582F528A2AC8B0052DDF3 /* BaseCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A31582F428A2AC8B0052DDF3 /* BaseCollectionViewCell.swift */; };
+		A31582F728A2AC9C0052DDF3 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A31582F628A2AC9C0052DDF3 /* BaseViewController.swift */; };
+		A31582FC28A2AE6A0052DDF3 /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A31582FB28A2AE6A0052DDF3 /* SignInView.swift */; };
+		A315830828A2B0760052DDF3 /* Ubuntu-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A315830028A2B0750052DDF3 /* Ubuntu-Light.ttf */; };
+		A315830928A2B0760052DDF3 /* Ubuntu-MediumItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A315830128A2B0750052DDF3 /* Ubuntu-MediumItalic.ttf */; };
+		A315830A28A2B0760052DDF3 /* Ubuntu-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A315830228A2B0760052DDF3 /* Ubuntu-BoldItalic.ttf */; };
+		A315830B28A2B0760052DDF3 /* Ubuntu-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A315830328A2B0760052DDF3 /* Ubuntu-Italic.ttf */; };
+		A315830C28A2B0760052DDF3 /* Ubuntu-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A315830428A2B0760052DDF3 /* Ubuntu-LightItalic.ttf */; };
+		A315830D28A2B0760052DDF3 /* Ubuntu-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A315830528A2B0760052DDF3 /* Ubuntu-Medium.ttf */; };
+		A315830E28A2B0760052DDF3 /* Ubuntu-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A315830628A2B0760052DDF3 /* Ubuntu-Bold.ttf */; };
+		A315830F28A2B0760052DDF3 /* Ubuntu-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A315830728A2B0760052DDF3 /* Ubuntu-Regular.ttf */; };
+		A315831228A2B1A50052DDF3 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = A315831128A2B1A50052DDF3 /* R.generated.swift */; };
+		A315831428A2B1DE0052DDF3 /* credentials.plist in Resources */ = {isa = PBXBuildFile; fileRef = A315831328A2B1DE0052DDF3 /* credentials.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		583C61DEB416D5FFED3EDDDE /* Pods_MangaApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MangaApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6316A0690E7B26E0F4C32D4B /* Pods-MangaApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MangaApp.debug.xcconfig"; path = "Target Support Files/Pods-MangaApp/Pods-MangaApp.debug.xcconfig"; sourceTree = "<group>"; };
 		A31582D828A2A8EA0052DDF3 /* MangaApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MangaApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A31582DB28A2A8EA0052DDF3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		A31582DF28A2A8EA0052DDF3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		A31582E228A2A8EA0052DDF3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		A31582DF28A2A8EA0052DDF3 /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		A31582E428A2A8EB0052DDF3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A31582E728A2A8EB0052DDF3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A31582E928A2A8EB0052DDF3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A31582F228A2AC760052DDF3 /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
+		A31582F428A2AC8B0052DDF3 /* BaseCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCollectionViewCell.swift; sourceTree = "<group>"; };
+		A31582F628A2AC9C0052DDF3 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		A31582FB28A2AE6A0052DDF3 /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
+		A315830028A2B0750052DDF3 /* Ubuntu-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Ubuntu-Light.ttf"; sourceTree = "<group>"; };
+		A315830128A2B0750052DDF3 /* Ubuntu-MediumItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Ubuntu-MediumItalic.ttf"; sourceTree = "<group>"; };
+		A315830228A2B0760052DDF3 /* Ubuntu-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Ubuntu-BoldItalic.ttf"; sourceTree = "<group>"; };
+		A315830328A2B0760052DDF3 /* Ubuntu-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Ubuntu-Italic.ttf"; sourceTree = "<group>"; };
+		A315830428A2B0760052DDF3 /* Ubuntu-LightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Ubuntu-LightItalic.ttf"; sourceTree = "<group>"; };
+		A315830528A2B0760052DDF3 /* Ubuntu-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Ubuntu-Medium.ttf"; sourceTree = "<group>"; };
+		A315830628A2B0760052DDF3 /* Ubuntu-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Ubuntu-Bold.ttf"; sourceTree = "<group>"; };
+		A315830728A2B0760052DDF3 /* Ubuntu-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Ubuntu-Regular.ttf"; sourceTree = "<group>"; };
+		A315831128A2B1A50052DDF3 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = SOURCE_ROOT; };
+		A315831328A2B1DE0052DDF3 /* credentials.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = credentials.plist; sourceTree = "<group>"; };
+		AAC56263E1F6C4A5BAE35D9F /* Pods-MangaApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MangaApp.release.xcconfig"; path = "Target Support Files/Pods-MangaApp/Pods-MangaApp.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,17 +59,40 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				99A99FB162736D4FF19151FC /* Pods_MangaApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1C86AE78AF8AD25E993817CB /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				6316A0690E7B26E0F4C32D4B /* Pods-MangaApp.debug.xcconfig */,
+				AAC56263E1F6C4A5BAE35D9F /* Pods-MangaApp.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		45F1E9AEEB78C340A8CC7554 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				583C61DEB416D5FFED3EDDDE /* Pods_MangaApp.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		A31582CF28A2A8EA0052DDF3 = {
 			isa = PBXGroup;
 			children = (
+				A31582FF28A2B04D0052DDF3 /* Resources */,
+				A31582F828A2ACF80052DDF3 /* Application */,
+				A31582F128A2AC5E0052DDF3 /* BaseClasses */,
 				A31582DA28A2A8EA0052DDF3 /* MangaApp */,
 				A31582D928A2A8EA0052DDF3 /* Products */,
+				1C86AE78AF8AD25E993817CB /* Pods */,
+				45F1E9AEEB78C340A8CC7554 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -54,14 +107,56 @@
 		A31582DA28A2A8EA0052DDF3 /* MangaApp */ = {
 			isa = PBXGroup;
 			children = (
-				A31582DB28A2A8EA0052DDF3 /* AppDelegate.swift */,
-				A31582DF28A2A8EA0052DDF3 /* ViewController.swift */,
-				A31582E128A2A8EA0052DDF3 /* Main.storyboard */,
+				A31582FA28A2AD870052DDF3 /* Screens */,
 				A31582E428A2A8EB0052DDF3 /* Assets.xcassets */,
 				A31582E628A2A8EB0052DDF3 /* LaunchScreen.storyboard */,
 				A31582E928A2A8EB0052DDF3 /* Info.plist */,
+				A315831328A2B1DE0052DDF3 /* credentials.plist */,
 			);
 			path = MangaApp;
+			sourceTree = "<group>";
+		};
+		A31582F128A2AC5E0052DDF3 /* BaseClasses */ = {
+			isa = PBXGroup;
+			children = (
+				A31582F228A2AC760052DDF3 /* BaseView.swift */,
+				A31582F628A2AC9C0052DDF3 /* BaseViewController.swift */,
+				A31582F428A2AC8B0052DDF3 /* BaseCollectionViewCell.swift */,
+			);
+			path = BaseClasses;
+			sourceTree = "<group>";
+		};
+		A31582F828A2ACF80052DDF3 /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				A31582DB28A2A8EA0052DDF3 /* AppDelegate.swift */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		A31582FA28A2AD870052DDF3 /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				A31582DF28A2A8EA0052DDF3 /* SignInViewController.swift */,
+				A31582FB28A2AE6A0052DDF3 /* SignInView.swift */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		A31582FF28A2B04D0052DDF3 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				A315831128A2B1A50052DDF3 /* R.generated.swift */,
+				A315830628A2B0760052DDF3 /* Ubuntu-Bold.ttf */,
+				A315830228A2B0760052DDF3 /* Ubuntu-BoldItalic.ttf */,
+				A315830328A2B0760052DDF3 /* Ubuntu-Italic.ttf */,
+				A315830028A2B0750052DDF3 /* Ubuntu-Light.ttf */,
+				A315830428A2B0760052DDF3 /* Ubuntu-LightItalic.ttf */,
+				A315830528A2B0760052DDF3 /* Ubuntu-Medium.ttf */,
+				A315830128A2B0750052DDF3 /* Ubuntu-MediumItalic.ttf */,
+				A315830728A2B0760052DDF3 /* Ubuntu-Regular.ttf */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -71,9 +166,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A31582EC28A2A8EB0052DDF3 /* Build configuration list for PBXNativeTarget "MangaApp" */;
 			buildPhases = (
+				FE93F2BAF3CFC2ED41607C9F /* [CP] Check Pods Manifest.lock */,
+				A315831028A2B0950052DDF3 /* ShellScript */,
 				A31582D428A2A8EA0052DDF3 /* Sources */,
 				A31582D528A2A8EA0052DDF3 /* Frameworks */,
 				A31582D628A2A8EA0052DDF3 /* Resources */,
+				C1267B361F05A02CAA91F0BB /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -123,19 +221,94 @@
 			buildActionMask = 2147483647;
 			files = (
 				A31582E828A2A8EB0052DDF3 /* LaunchScreen.storyboard in Resources */,
+				A315830B28A2B0760052DDF3 /* Ubuntu-Italic.ttf in Resources */,
+				A315830A28A2B0760052DDF3 /* Ubuntu-BoldItalic.ttf in Resources */,
+				A315830C28A2B0760052DDF3 /* Ubuntu-LightItalic.ttf in Resources */,
+				A315830828A2B0760052DDF3 /* Ubuntu-Light.ttf in Resources */,
+				A315831428A2B1DE0052DDF3 /* credentials.plist in Resources */,
+				A315830928A2B0760052DDF3 /* Ubuntu-MediumItalic.ttf in Resources */,
+				A315830D28A2B0760052DDF3 /* Ubuntu-Medium.ttf in Resources */,
 				A31582E528A2A8EB0052DDF3 /* Assets.xcassets in Resources */,
-				A31582E328A2A8EA0052DDF3 /* Main.storyboard in Resources */,
+				A315830F28A2B0760052DDF3 /* Ubuntu-Regular.ttf in Resources */,
+				A315830E28A2B0760052DDF3 /* Ubuntu-Bold.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		A315831028A2B0950052DDF3 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"",
+				$SRCROOT/R.generated.swift,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"$PODS_ROOT/R.swift/rswift\" generate \"$SRCROOT/R.generated.swift\"\n";
+		};
+		C1267B361F05A02CAA91F0BB /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MangaApp/Pods-MangaApp-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MangaApp/Pods-MangaApp-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MangaApp/Pods-MangaApp-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FE93F2BAF3CFC2ED41607C9F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MangaApp-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		A31582D428A2A8EA0052DDF3 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A31582E028A2A8EA0052DDF3 /* ViewController.swift in Sources */,
+				A31582FC28A2AE6A0052DDF3 /* SignInView.swift in Sources */,
+				A315831228A2B1A50052DDF3 /* R.generated.swift in Sources */,
+				A31582F728A2AC9C0052DDF3 /* BaseViewController.swift in Sources */,
+				A31582F328A2AC760052DDF3 /* BaseView.swift in Sources */,
+				A31582F528A2AC8B0052DDF3 /* BaseCollectionViewCell.swift in Sources */,
+				A31582E028A2A8EA0052DDF3 /* SignInViewController.swift in Sources */,
 				A31582DC28A2A8EA0052DDF3 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -143,14 +316,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		A31582E128A2A8EA0052DDF3 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				A31582E228A2A8EA0052DDF3 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		A31582E628A2A8EB0052DDF3 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -278,6 +443,7 @@
 		};
 		A31582ED28A2A8EB0052DDF3 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6316A0690E7B26E0F4C32D4B /* Pods-MangaApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -306,6 +472,7 @@
 		};
 		A31582EE28A2A8EB0052DDF3 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = AAC56263E1F6C4A5BAE35D9F /* Pods-MangaApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
