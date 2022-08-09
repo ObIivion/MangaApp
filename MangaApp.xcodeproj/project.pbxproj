@@ -146,7 +146,15 @@
 		A31582FF28A2B04D0052DDF3 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				A315831528A2B8630052DDF3 /* Fonts */,
 				A315831128A2B1A50052DDF3 /* R.generated.swift */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		A315831528A2B8630052DDF3 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
 				A315830628A2B0760052DDF3 /* Ubuntu-Bold.ttf */,
 				A315830228A2B0760052DDF3 /* Ubuntu-BoldItalic.ttf */,
 				A315830328A2B0760052DDF3 /* Ubuntu-Italic.ttf */,
@@ -156,7 +164,7 @@
 				A315830128A2B0750052DDF3 /* Ubuntu-MediumItalic.ttf */,
 				A315830728A2B0760052DDF3 /* Ubuntu-Regular.ttf */,
 			);
-			path = Resources;
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
