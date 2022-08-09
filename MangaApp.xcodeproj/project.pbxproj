@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		A31582DC28A2A8EA0052DDF3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A31582DB28A2A8EA0052DDF3 /* AppDelegate.swift */; };
-		A31582DE28A2A8EA0052DDF3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A31582DD28A2A8EA0052DDF3 /* SceneDelegate.swift */; };
 		A31582E028A2A8EA0052DDF3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A31582DF28A2A8EA0052DDF3 /* ViewController.swift */; };
 		A31582E328A2A8EA0052DDF3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A31582E128A2A8EA0052DDF3 /* Main.storyboard */; };
 		A31582E528A2A8EB0052DDF3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A31582E428A2A8EB0052DDF3 /* Assets.xcassets */; };
@@ -18,7 +17,6 @@
 /* Begin PBXFileReference section */
 		A31582D828A2A8EA0052DDF3 /* MangaApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MangaApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A31582DB28A2A8EA0052DDF3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		A31582DD28A2A8EA0052DDF3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		A31582DF28A2A8EA0052DDF3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		A31582E228A2A8EA0052DDF3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A31582E428A2A8EB0052DDF3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -57,7 +55,6 @@
 			isa = PBXGroup;
 			children = (
 				A31582DB28A2A8EA0052DDF3 /* AppDelegate.swift */,
-				A31582DD28A2A8EA0052DDF3 /* SceneDelegate.swift */,
 				A31582DF28A2A8EA0052DDF3 /* ViewController.swift */,
 				A31582E128A2A8EA0052DDF3 /* Main.storyboard */,
 				A31582E428A2A8EB0052DDF3 /* Assets.xcassets */,
@@ -140,7 +137,6 @@
 			files = (
 				A31582E028A2A8EA0052DDF3 /* ViewController.swift in Sources */,
 				A31582DC28A2A8EA0052DDF3 /* AppDelegate.swift in Sources */,
-				A31582DE28A2A8EA0052DDF3 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -292,7 +288,7 @@
 				INFOPLIST_FILE = MangaApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -320,7 +316,7 @@
 				INFOPLIST_FILE = MangaApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
