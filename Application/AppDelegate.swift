@@ -15,8 +15,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
+        let signInScreen = SignInUpScreen.build().view
+        
         window = UIWindow(frame: UIScreen.main.bounds)
-        window?.rootViewController = SignInViewController()
+        window?.rootViewController = signInScreen
         window?.makeKeyAndVisible()
         
         GIDSignIn.sharedInstance.restorePreviousSignIn { user, error in

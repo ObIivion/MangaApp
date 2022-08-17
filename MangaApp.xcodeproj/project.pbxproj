@@ -26,6 +26,9 @@
 		A315830F28A2B0760052DDF3 /* Ubuntu-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A315830728A2B0760052DDF3 /* Ubuntu-Regular.ttf */; };
 		A315831228A2B1A50052DDF3 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = A315831128A2B1A50052DDF3 /* R.generated.swift */; };
 		A315831428A2B1DE0052DDF3 /* credentials.plist in Resources */ = {isa = PBXBuildFile; fileRef = A315831328A2B1DE0052DDF3 /* credentials.plist */; };
+		A359327F28AD0B56009546A7 /* SignInRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A359327E28AD0B56009546A7 /* SignInRouter.swift */; };
+		A359328128AD1106009546A7 /* SignInScreenBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = A359328028AD1106009546A7 /* SignInScreenBuilder.swift */; };
+		A3F812E728A562BB008619CF /* SignInPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3F812E628A562BB008619CF /* SignInPresenter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -51,6 +54,9 @@
 		A315830728A2B0760052DDF3 /* Ubuntu-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Ubuntu-Regular.ttf"; sourceTree = "<group>"; };
 		A315831128A2B1A50052DDF3 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = SOURCE_ROOT; };
 		A315831328A2B1DE0052DDF3 /* credentials.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = credentials.plist; sourceTree = "<group>"; };
+		A359327E28AD0B56009546A7 /* SignInRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInRouter.swift; sourceTree = "<group>"; };
+		A359328028AD1106009546A7 /* SignInScreenBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInScreenBuilder.swift; sourceTree = "<group>"; };
+		A3F812E628A562BB008619CF /* SignInPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInPresenter.swift; sourceTree = "<group>"; };
 		AAC56263E1F6C4A5BAE35D9F /* Pods-MangaApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MangaApp.release.xcconfig"; path = "Target Support Files/Pods-MangaApp/Pods-MangaApp.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -137,8 +143,7 @@
 		A31582FA28A2AD870052DDF3 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
-				A31582DF28A2A8EA0052DDF3 /* SignInViewController.swift */,
-				A31582FB28A2AE6A0052DDF3 /* SignInView.swift */,
+				A359328228AD112B009546A7 /* SignInUpScreen */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -165,6 +170,18 @@
 				A315830728A2B0760052DDF3 /* Ubuntu-Regular.ttf */,
 			);
 			path = Fonts;
+			sourceTree = "<group>";
+		};
+		A359328228AD112B009546A7 /* SignInUpScreen */ = {
+			isa = PBXGroup;
+			children = (
+				A359328028AD1106009546A7 /* SignInScreenBuilder.swift */,
+				A31582DF28A2A8EA0052DDF3 /* SignInViewController.swift */,
+				A31582FB28A2AE6A0052DDF3 /* SignInView.swift */,
+				A3F812E628A562BB008619CF /* SignInPresenter.swift */,
+				A359327E28AD0B56009546A7 /* SignInRouter.swift */,
+			);
+			path = SignInUpScreen;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -311,13 +328,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A3F812E728A562BB008619CF /* SignInPresenter.swift in Sources */,
 				A31582FC28A2AE6A0052DDF3 /* SignInView.swift in Sources */,
 				A315831228A2B1A50052DDF3 /* R.generated.swift in Sources */,
+				A359328128AD1106009546A7 /* SignInScreenBuilder.swift in Sources */,
 				A31582F728A2AC9C0052DDF3 /* BaseViewController.swift in Sources */,
 				A31582F328A2AC760052DDF3 /* BaseView.swift in Sources */,
 				A31582F528A2AC8B0052DDF3 /* BaseCollectionViewCell.swift in Sources */,
 				A31582E028A2A8EA0052DDF3 /* SignInViewController.swift in Sources */,
 				A31582DC28A2A8EA0052DDF3 /* AppDelegate.swift in Sources */,
+				A359327F28AD0B56009546A7 /* SignInRouter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
