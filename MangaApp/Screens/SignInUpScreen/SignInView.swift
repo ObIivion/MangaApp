@@ -9,6 +9,8 @@ import UIKit
 
 class SignInView: BaseView {
     
+    private var gradientMenuTopConstraint = NSLayoutConstraint()
+    
     private let gradientLayer = CAGradientLayer()
     
     private let welcomeTitleLabel: UILabel = {
@@ -126,6 +128,37 @@ class SignInView: BaseView {
         return button
     }()
     
+    let completePasswordField: UITextField = {
+        let field = UITextField()
+        field.textColor = .white
+        field.textAlignment = .left
+        field.attributedPlaceholder = NSAttributedString(string: "Complete password",
+                                                         attributes: [NSAttributedString.Key.foregroundColor : UIColor.white])
+        field.font = R.font.ubuntuRegular(size: 16)
+        field.backgroundColor = .clear
+        field.tintColor = .white
+        field.isSecureTextEntry = true
+        field.isHidden = true
+        return field
+    }()
+    
+    private let completePasswordWhiteLine: UIView = {
+        let view = UIView()
+        view.backgroundColor = .white
+        view.isHidden = true
+        return view
+    }()
+    
+    let haveAccount: UIButton = {
+        let button = UIButton()
+        button.setTitle("Have account? Sign in!", for: .normal)
+        button.setTitleColor(UIColor.white, for: .normal)
+        button.setTitleColor(UIColor(red: 0.617, green: 0.617, blue: 0.617, alpha: 1), for: .highlighted)
+        button.titleLabel?.font = R.font.ubuntuRegular(size: 16)
+        button.isHidden = true
+        return button
+    }()
+    
     let continueButton: UIButton = {
         let button = UIButton()
         button.setTitle("Continue", for: .normal)
@@ -140,6 +173,8 @@ class SignInView: BaseView {
     
     override func initSetup() {
         
+        gradientMenuTopConstraint = gradientView.topAnchor.constraint(equalTo: stackWithSignUp.bottomAnchor, constant: 150)
+        
         createGradient()
         
         addSubview(welcomeTitleLabel)
@@ -152,11 +187,40 @@ class SignInView: BaseView {
         addSubview(loginWhiteLine)
         addSubview(passwordField)
         addSubview(passwordWhiteLine)
+        addSubview(completePasswordField)
+        addSubview(completePasswordWhiteLine)
+        addSubview(haveAccount)
         addSubview(forgotPasswordButton)
         addSubview(continueButton)
         
         setupConstraints()
-        
+    }
+    
+    func setSignInState() {
+        UIView.animate(withDuration: 1) {
+            self.gradientMenuTopConstraint.constant = 150
+            self.layoutIfNeeded()
+            self.haveAccount.isHidden = true
+            self.completePasswordField.isHidden = true
+            self.completePasswordWhiteLine.isHidden = true
+            self.forgotPasswordButton.isHidden = false
+            self.stackWithSignUp.isHidden = false
+            self.subTitleLabel.text = "Sign in to start"
+        }
+    }
+    
+    func setSignUpState() {
+        UIView.animate(withDuration: 1) {
+            self.gradientMenuTopConstraint.constant = 90
+            self.layoutIfNeeded()
+            self.haveAccount.isHidden = false
+            self.completePasswordField.isHidden = false
+            self.completePasswordWhiteLine.isHidden = false
+            self.forgotPasswordButton.isHidden = true
+            self.stackWithSignUp.isHidden = true
+            self.haveAccount.isHidden = false
+            self.subTitleLabel.text = "Sign up to start"
+        }
     }
     
     func setContinueButtonEnabled(isEnabled: Bool) {
@@ -225,64 +289,88 @@ class SignInView: BaseView {
         
         stackWithSignUp.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-        
+
             stackWithSignUp.topAnchor.constraint(equalTo: customGoogleSignInButton.bottomAnchor, constant: 20),
             stackWithSignUp.centerXAnchor.constraint(equalTo: centerXAnchor)
         ])
-        
+
         gradientView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-        
-            gradientView.topAnchor.constraint(equalTo: haventAccountLabel.bottomAnchor, constant: 150),
+
+            gradientMenuTopConstraint,
             gradientView.leadingAnchor.constraint(equalTo: leadingAnchor),
             gradientView.trailingAnchor.constraint(equalTo: trailingAnchor),
             gradientView.bottomAnchor.constraint(equalTo: bottomAnchor)
         ])
-        
+
         loginField.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-        
+
             loginField.topAnchor.constraint(equalTo: gradientView.topAnchor, constant: 60),
             loginField.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 47),
             loginField.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -48),
         ])
-        
+
         loginWhiteLine.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-        
+
             loginWhiteLine.topAnchor.constraint(equalTo: loginField.bottomAnchor, constant: 5),
             loginWhiteLine.centerXAnchor.constraint(equalTo: centerXAnchor),
             loginWhiteLine.widthAnchor.constraint(equalToConstant: 320),
-            loginWhiteLine.heightAnchor.constraint(equalToConstant: 2)
+            loginWhiteLine.heightAnchor.constraint(equalToConstant: 1)
         ])
-        
+
         passwordField.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-        
+
             passwordField.topAnchor.constraint(equalTo: loginWhiteLine.bottomAnchor, constant: 40),
             passwordField.leadingAnchor.constraint(equalTo: loginField.leadingAnchor),
             passwordField.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -48),
         ])
-        
+
         passwordWhiteLine.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-        
+
             passwordWhiteLine.topAnchor.constraint(equalTo: passwordField.bottomAnchor, constant: 5),
             passwordWhiteLine.centerXAnchor.constraint(equalTo: centerXAnchor),
             passwordWhiteLine.widthAnchor.constraint(equalToConstant: 320),
-            passwordWhiteLine.heightAnchor.constraint(equalToConstant: 2)
+            passwordWhiteLine.heightAnchor.constraint(equalToConstant: 1)
         ])
-        
+
         forgotPasswordButton.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-        
+
             forgotPasswordButton.topAnchor.constraint(equalTo: passwordWhiteLine.bottomAnchor, constant: 10),
             forgotPasswordButton.trailingAnchor.constraint(equalTo: passwordWhiteLine.trailingAnchor, constant: -11)
         ])
-        
+
+        completePasswordField.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+
+            completePasswordField.topAnchor.constraint(equalTo: passwordWhiteLine.bottomAnchor, constant: 40),
+            completePasswordField.leadingAnchor.constraint(equalTo: loginField.leadingAnchor),
+            completePasswordField.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -48),
+        ])
+
+        completePasswordWhiteLine.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+
+            completePasswordWhiteLine.topAnchor.constraint(equalTo: completePasswordField.bottomAnchor, constant: 5),
+            completePasswordWhiteLine.centerXAnchor.constraint(equalTo: centerXAnchor),
+            completePasswordWhiteLine.widthAnchor.constraint(equalToConstant: 320),
+            completePasswordWhiteLine.heightAnchor.constraint(equalToConstant: 1)
+        ])
+
+        haveAccount.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+
+            haveAccount.topAnchor.constraint(equalTo: completePasswordWhiteLine.bottomAnchor, constant: 70),
+            haveAccount.centerXAnchor.constraint(equalTo: centerXAnchor)
+        ])
+
         continueButton.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-        
+
             continueButton.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -92),
             continueButton.centerXAnchor.constraint(equalTo: centerXAnchor),
             continueButton.widthAnchor.constraint(equalToConstant: 280),

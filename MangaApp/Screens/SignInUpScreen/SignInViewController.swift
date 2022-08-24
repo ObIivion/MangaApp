@@ -29,7 +29,19 @@ class SignInViewController: BaseViewController<SignInView>, SignInViewProtocol  
         mainView.passwordField.addTarget(self, action: #selector(textChanged), for: .editingChanged)
         
         mainView.continueButton.addTarget(self, action: #selector(continueButtonClicked), for: .touchUpInside)
+     
+        mainView.haveAccount.addTarget(self, action: #selector(haveAccountPressed), for: .touchUpInside)
+        mainView.signUpTextButton.addTarget(self, action: #selector(signUpPressed), for: .touchUpInside)
+    }
+    
+    @objc func haveAccountPressed(_ sender: UIButton){
         
+        mainView.setSignInState()
+    }
+    
+    @objc func signUpPressed(_ sender: UIButton){
+        
+        mainView.setSignUpState()
     }
     
     @objc func textChanged(_ sender: UITextField) {
@@ -50,7 +62,6 @@ class SignInViewController: BaseViewController<SignInView>, SignInViewProtocol  
     @objc func googleSignIn(_ sender: UIButton){
         
         presenter.signIn()
-        
     }
 
 }
