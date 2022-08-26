@@ -29,6 +29,7 @@
 		A359327F28AD0B56009546A7 /* SignInRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A359327E28AD0B56009546A7 /* SignInRouter.swift */; };
 		A359328128AD1106009546A7 /* SignInScreenBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = A359328028AD1106009546A7 /* SignInScreenBuilder.swift */; };
 		A3AB631828B771F400EC5807 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3AB631728B771F400EC5807 /* AuthService.swift */; };
+		A3AB631D28B911FA00EC5807 /* UsersModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3AB631C28B911FA00EC5807 /* UsersModel.swift */; };
 		A3F812E728A562BB008619CF /* SignInPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3F812E628A562BB008619CF /* SignInPresenter.swift */; };
 /* End PBXBuildFile section */
 
@@ -58,6 +59,7 @@
 		A359327E28AD0B56009546A7 /* SignInRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInRouter.swift; sourceTree = "<group>"; };
 		A359328028AD1106009546A7 /* SignInScreenBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInScreenBuilder.swift; sourceTree = "<group>"; };
 		A3AB631728B771F400EC5807 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
+		A3AB631C28B911FA00EC5807 /* UsersModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersModel.swift; sourceTree = "<group>"; };
 		A3F812E628A562BB008619CF /* SignInPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInPresenter.swift; sourceTree = "<group>"; };
 		AAC56263E1F6C4A5BAE35D9F /* Pods-MangaApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MangaApp.release.xcconfig"; path = "Target Support Files/Pods-MangaApp/Pods-MangaApp.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -178,10 +180,10 @@
 		A359328228AD112B009546A7 /* SignInUpScreen */ = {
 			isa = PBXGroup;
 			children = (
+				A3AB631B28B911EC00EC5807 /* Model */,
+				A3AB631A28B911DE00EC5807 /* Presenter */,
+				A3AB631928B911B300EC5807 /* View */,
 				A359328028AD1106009546A7 /* SignInScreenBuilder.swift */,
-				A31582DF28A2A8EA0052DDF3 /* SignInViewController.swift */,
-				A31582FB28A2AE6A0052DDF3 /* SignInView.swift */,
-				A3F812E628A562BB008619CF /* SignInPresenter.swift */,
 				A359327E28AD0B56009546A7 /* SignInRouter.swift */,
 			);
 			path = SignInUpScreen;
@@ -193,6 +195,31 @@
 				A3AB631728B771F400EC5807 /* AuthService.swift */,
 			);
 			path = Api;
+			sourceTree = "<group>";
+		};
+		A3AB631928B911B300EC5807 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				A31582FB28A2AE6A0052DDF3 /* SignInView.swift */,
+				A31582DF28A2A8EA0052DDF3 /* SignInViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		A3AB631A28B911DE00EC5807 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				A3F812E628A562BB008619CF /* SignInPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		A3AB631B28B911EC00EC5807 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				A3AB631C28B911FA00EC5807 /* UsersModel.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -341,6 +368,7 @@
 			files = (
 				A3F812E728A562BB008619CF /* SignInPresenter.swift in Sources */,
 				A31582FC28A2AE6A0052DDF3 /* SignInView.swift in Sources */,
+				A3AB631D28B911FA00EC5807 /* UsersModel.swift in Sources */,
 				A315831228A2B1A50052DDF3 /* R.generated.swift in Sources */,
 				A3AB631828B771F400EC5807 /* AuthService.swift in Sources */,
 				A359328128AD1106009546A7 /* SignInScreenBuilder.swift in Sources */,

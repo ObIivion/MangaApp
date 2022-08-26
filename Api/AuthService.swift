@@ -30,13 +30,7 @@ class AuthService: NSObject {
         return request
     }
     
-    private func handleTokenChanged(token: String) {
-        self.token = token
-    }
-    
     func obtainingAccessToken(email: String, password: String) {
-        
-        print("УПАЛИ В ПОЛУЧЕНИЕ ТОКЕНА")
         
         let json: [String : String] = ["grant_type": "password", "username": email, "password": password]
         let header = ["Content-Type" : "application/json"]
@@ -65,9 +59,15 @@ class AuthService: NSObject {
                 print(error?.localizedDescription ?? "No data token")
                 return
             }
-            self.handleTokenChanged(token: token as! String)
-            print(self.token)
+            self.token = token as! String
         }
         task.resume()
     }
+    
+    func registerUser() {
+        
+        
+        
+    }
+    
 }
