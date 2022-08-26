@@ -28,6 +28,7 @@
 		A315831428A2B1DE0052DDF3 /* credentials.plist in Resources */ = {isa = PBXBuildFile; fileRef = A315831328A2B1DE0052DDF3 /* credentials.plist */; };
 		A359327F28AD0B56009546A7 /* SignInRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A359327E28AD0B56009546A7 /* SignInRouter.swift */; };
 		A359328128AD1106009546A7 /* SignInScreenBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = A359328028AD1106009546A7 /* SignInScreenBuilder.swift */; };
+		A3AB631828B771F400EC5807 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3AB631728B771F400EC5807 /* AuthService.swift */; };
 		A3F812E728A562BB008619CF /* SignInPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3F812E628A562BB008619CF /* SignInPresenter.swift */; };
 /* End PBXBuildFile section */
 
@@ -56,6 +57,7 @@
 		A315831328A2B1DE0052DDF3 /* credentials.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = credentials.plist; sourceTree = "<group>"; };
 		A359327E28AD0B56009546A7 /* SignInRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInRouter.swift; sourceTree = "<group>"; };
 		A359328028AD1106009546A7 /* SignInScreenBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInScreenBuilder.swift; sourceTree = "<group>"; };
+		A3AB631728B771F400EC5807 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		A3F812E628A562BB008619CF /* SignInPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInPresenter.swift; sourceTree = "<group>"; };
 		AAC56263E1F6C4A5BAE35D9F /* Pods-MangaApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MangaApp.release.xcconfig"; path = "Target Support Files/Pods-MangaApp/Pods-MangaApp.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -92,6 +94,7 @@
 		A31582CF28A2A8EA0052DDF3 = {
 			isa = PBXGroup;
 			children = (
+				A3AB631628B771AB00EC5807 /* Api */,
 				A31582FF28A2B04D0052DDF3 /* Resources */,
 				A31582F828A2ACF80052DDF3 /* Application */,
 				A31582F128A2AC5E0052DDF3 /* BaseClasses */,
@@ -182,6 +185,14 @@
 				A359327E28AD0B56009546A7 /* SignInRouter.swift */,
 			);
 			path = SignInUpScreen;
+			sourceTree = "<group>";
+		};
+		A3AB631628B771AB00EC5807 /* Api */ = {
+			isa = PBXGroup;
+			children = (
+				A3AB631728B771F400EC5807 /* AuthService.swift */,
+			);
+			path = Api;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -331,6 +342,7 @@
 				A3F812E728A562BB008619CF /* SignInPresenter.swift in Sources */,
 				A31582FC28A2AE6A0052DDF3 /* SignInView.swift in Sources */,
 				A315831228A2B1A50052DDF3 /* R.generated.swift in Sources */,
+				A3AB631828B771F400EC5807 /* AuthService.swift in Sources */,
 				A359328128AD1106009546A7 /* SignInScreenBuilder.swift in Sources */,
 				A31582F728A2AC9C0052DDF3 /* BaseViewController.swift in Sources */,
 				A31582F328A2AC760052DDF3 /* BaseView.swift in Sources */,

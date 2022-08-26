@@ -307,7 +307,7 @@ class SignInView: BaseView {
         NSLayoutConstraint.activate([
 
             loginField.topAnchor.constraint(equalTo: gradientView.topAnchor, constant: 60),
-            loginField.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 47),
+            loginField.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 57),
             loginField.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -48),
         ])
 

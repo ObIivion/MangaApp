@@ -55,13 +55,12 @@ class SignInViewController: BaseViewController<SignInView>, SignInViewProtocol  
     
     @objc func continueButtonClicked() {
         
-        print("УПАЛИ В BUTTON CLICKED")
-        
+        presenter.signIn(email: "mercy.obiivion@gmail.com", password: "Dinler2015")
     }
     
     @objc func googleSignIn(_ sender: UIButton){
         
-        presenter.signIn()
+        presenter.signInWithGoogle()
     }
 
 }
