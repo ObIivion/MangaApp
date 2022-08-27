@@ -13,9 +13,10 @@ protocol SignInUpPresenterProtocol {
     func signUpWithGoogle()
     
     func signIn(email: String, password: String)
-    func signUp()
+    func signUp(email: String, password: String)
     
-    func checkFieldsBeforeRegistration()
+    func checkFieldsBeforeSignIn(email: String, password: String) -> Bool
+    func checkFieldsBeforeSignUp(email: String, password: String, completePassword: String) -> Bool
 }
 
 import Foundation
@@ -40,19 +41,38 @@ class SignInPresenter: SignInUpPresenterProtocol {
     }
     
     func signIn(email: String, password: String) {
-        
+        checkFieldsBeforeSignIn(email: email, password: password)
         authService.obtainingAccessToken(email: email, password: password)
     }
     
-    func signUp() {
+    func signUp(email: String, password: String) {
         
-        
-    }
-    
-    func checkFieldsBeforeRegistration() {
-        
-        
+        authService.registerUser(email: email, password: password)
         
     }
     
+    func checkFieldsBeforeSignIn(email: String, password: String) -> Bool {
+        
+        if !email.contains("@") || !email.contains(".") {
+            view?.addAlert(title: "Email должен содержать @ и .")
+            return false
+        } else if password.count < 9 {
+            view?.addAlert(title: "Пароль слишком короткий")
+            return false
+        } else { return true }
+    }
+    
+    func checkFieldsBeforeSignUp(email: String, password: String, completePassword: String) -> Bool {
+        
+        if !email.contains("@") || !email.contains(".") {
+            view?.addAlert(title: "Email должен содержать @ и .")
+            return false
+        } else if password.count < 9 {
+            view?.addAlert(title: "Пароль слишком короткий")
+            return false
+        } else if password != completePassword {
+            view?.addAlert(title: "Пароли не совпадают")
+            return false
+        } else { return true }
+    }
 }

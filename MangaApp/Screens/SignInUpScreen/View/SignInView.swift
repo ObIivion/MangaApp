@@ -9,6 +9,13 @@ import UIKit
 
 class SignInView: BaseView {
     
+    enum SignState {
+        case signIn
+        case signUp
+    }
+    
+    var signState: SignState = .signIn
+    
     private var gradientMenuTopConstraint = NSLayoutConstraint()
     
     private let gradientLayer = CAGradientLayer()
@@ -207,6 +214,7 @@ class SignInView: BaseView {
             self.stackWithSignUp.isHidden = false
             self.subTitleLabel.text = "Sign in to start"
         }
+        self.signState = .signIn
     }
     
     func setSignUpState() {
@@ -221,6 +229,7 @@ class SignInView: BaseView {
             self.haveAccount.isHidden = false
             self.subTitleLabel.text = "Sign up to start"
         }
+        self.signState = .signUp
     }
     
     func setContinueButtonEnabled(isEnabled: Bool) {
@@ -364,7 +373,7 @@ class SignInView: BaseView {
         haveAccount.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
 
-            haveAccount.topAnchor.constraint(equalTo: completePasswordWhiteLine.bottomAnchor, constant: 70),
+            haveAccount.topAnchor.constraint(equalTo: completePasswordWhiteLine.bottomAnchor, constant: 30),
             haveAccount.centerXAnchor.constraint(equalTo: centerXAnchor)
         ])
 

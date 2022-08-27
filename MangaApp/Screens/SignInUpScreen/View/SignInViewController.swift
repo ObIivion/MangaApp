@@ -10,11 +10,11 @@ import GoogleSignIn
 
 protocol SignInViewProtocol: AnyObject {
     
-    
+    func addAlert(title: String)
     
 }
 
-class SignInViewController: BaseViewController<SignInView>, SignInViewProtocol  {
+class SignInViewController: BaseViewController<SignInView>  {
     
     var presenter: SignInUpPresenterProtocol!
 
@@ -53,14 +53,42 @@ class SignInViewController: BaseViewController<SignInView>, SignInViewProtocol  
         }
     }
     
-    @objc func continueButtonClicked() {
+    @objc func continueButtonClicked(_ sender: UIButton) {
         
-        presenter.signIn(email: "mercy.obiivion@gmail.com", password: "Dinler2015")
+        // я могу гарантировать что они не пустые, иначе не нажать кнопочку "continue"
+        let email = mainView.loginField.text!
+        let password = mainView.passwordField.text!
+        print("----- ПЕЧАТАЮ СОСТОЯНИЕ ВЬЮ -----")
+        print(mainView.signState)
+        
+        if mainView.signState == .signIn {
+            
+            if presenter.checkFieldsBeforeSignIn(email: email, password: password) {
+                presenter.signIn(email: email , password: password)
+            } else { return }
+            
+        } else {
+            let completePassword = mainView.completePasswordField.text!
+            if presenter.checkFieldsBeforeSignUp(email: email, password: password, completePassword: completePassword) {
+                presenter.signUp(email: email, password: password)
+            } else { return }
+            
+        }
     }
     
     @objc func googleSignIn(_ sender: UIButton){
         
         presenter.signInWithGoogle()
+    }
+}
+    
+extension SignInViewController: SignInViewProtocol {
+
+    func addAlert(title: String) {
+        let alertController = UIAlertController(title: title, message: nil, preferredStyle: .alert)
+        let alertOK = UIAlertAction(title: "Ок", style: .default)
+        alertController.addAction(alertOK)
+        present(alertController, animated: true)
     }
 
 }

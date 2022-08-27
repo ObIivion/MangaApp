@@ -20,7 +20,15 @@ class AuthService: NSObject {
     private let oAuthbaseUrl = URL(string: "https://kitsu.io/api/oauth")
     private let oAuthXwwwFormUrlencoded = "application/x-www-form-urlencoded"
     
-    var token = ""
+    var accessToken: String {
+        let userDefaults = UserDefaults.standard
+        if let token = userDefaults.string(forKey: "access_token") {
+            return token
+        } else {
+            print("ничего нет в User defaults по ключу access_token, верну пустую строку")
+            return ""
+        }
+    }
     
     private var request: URLRequest? {
         let header = ["Content-Type" : "application/json"]
@@ -32,14 +40,16 @@ class AuthService: NSObject {
     
     func obtainingAccessToken(email: String, password: String) {
         
-        let json: [String : String] = ["grant_type": "password", "username": email, "password": password]
+        print("упали в получение токена")
+        
+        let jsonBody: [String : String] = ["grant_type": "password", "username": email, "password": password]
         let header = ["Content-Type" : "application/json"]
-        let jsonData = try? JSONSerialization.data(withJSONObject: json)
+        let jsonDataBody = try? JSONSerialization.data(withJSONObject: jsonBody)
         let url = oAuthbaseUrl?.appendingPathComponent("/token")
         
         var requset: URLRequest = URLRequest(url: url!)
         requset.allHTTPHeaderFields = header
-        requset.httpBody = jsonData
+        requset.httpBody = jsonDataBody
         requset.httpMethod = "POST"
         
         let task = URLSession.shared.dataTask(with: requset) { data, response, error in
@@ -59,15 +69,39 @@ class AuthService: NSObject {
                 print(error?.localizedDescription ?? "No data token")
                 return
             }
-            self.token = token as! String
+            let defaults = UserDefaults.standard
+            defaults.set(token, forKey: "access_token")
+            print(self.accessToken)
         }
         task.resume()
     }
     
-    func registerUser() {
+    func registerUser(email: String, password: String) {
         
+        print("***** Упали в регистрацию ---")
         
+        let header = ["Content-Type" : "application/vnd.api+json"]
+        let url = baseUrl?.appendingPathComponent("/users")
         
+        var request: URLRequest = URLRequest(url: url!)
+        request.allHTTPHeaderFields = header
+        request.httpMethod = "POST"
+        
+        let task = URLSession.shared.dataTask(with: request) { data, response, error in
+            
+            guard let data = data, error == nil else {
+                print(error?.localizedDescription ?? "No data")
+                return
+            }
+            
+            if let response = response {
+                print(response)
+
+            if let body = String(data: data, encoding: .utf8) {
+                print(body)
+            }
+        }
     }
-    
+    task.resume()
+    }
 }
