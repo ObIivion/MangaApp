@@ -135,21 +135,20 @@ class SignInView: BaseView {
         return button
     }()
     
-    let completePasswordField: UITextField = {
+    let usernameField: UITextField = {
         let field = UITextField()
         field.textColor = .white
         field.textAlignment = .left
-        field.attributedPlaceholder = NSAttributedString(string: "Complete password",
+        field.attributedPlaceholder = NSAttributedString(string: "Username",
                                                          attributes: [NSAttributedString.Key.foregroundColor : UIColor.white])
         field.font = R.font.ubuntuRegular(size: 16)
         field.backgroundColor = .clear
         field.tintColor = .white
-        field.isSecureTextEntry = true
         field.isHidden = true
         return field
     }()
     
-    private let completePasswordWhiteLine: UIView = {
+    private let usernameWhiteLine: UIView = {
         let view = UIView()
         view.backgroundColor = .white
         view.isHidden = true
@@ -194,8 +193,8 @@ class SignInView: BaseView {
         addSubview(loginWhiteLine)
         addSubview(passwordField)
         addSubview(passwordWhiteLine)
-        addSubview(completePasswordField)
-        addSubview(completePasswordWhiteLine)
+        addSubview(usernameField)
+        addSubview(usernameWhiteLine)
         addSubview(haveAccount)
         addSubview(forgotPasswordButton)
         addSubview(continueButton)
@@ -208,8 +207,8 @@ class SignInView: BaseView {
             self.gradientMenuTopConstraint.constant = 150
             self.layoutIfNeeded()
             self.haveAccount.isHidden = true
-            self.completePasswordField.isHidden = true
-            self.completePasswordWhiteLine.isHidden = true
+            self.usernameField.isHidden = true
+            self.usernameWhiteLine.isHidden = true
             self.forgotPasswordButton.isHidden = false
             self.stackWithSignUp.isHidden = false
             self.subTitleLabel.text = "Sign in to start"
@@ -222,8 +221,8 @@ class SignInView: BaseView {
             self.gradientMenuTopConstraint.constant = 90
             self.layoutIfNeeded()
             self.haveAccount.isHidden = false
-            self.completePasswordField.isHidden = false
-            self.completePasswordWhiteLine.isHidden = false
+            self.usernameField.isHidden = false
+            self.usernameWhiteLine.isHidden = false
             self.forgotPasswordButton.isHidden = true
             self.stackWithSignUp.isHidden = true
             self.haveAccount.isHidden = false
@@ -353,27 +352,27 @@ class SignInView: BaseView {
             forgotPasswordButton.trailingAnchor.constraint(equalTo: passwordWhiteLine.trailingAnchor, constant: -11)
         ])
 
-        completePasswordField.translatesAutoresizingMaskIntoConstraints = false
+        usernameField.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
 
-            completePasswordField.topAnchor.constraint(equalTo: passwordWhiteLine.bottomAnchor, constant: 40),
-            completePasswordField.leadingAnchor.constraint(equalTo: loginField.leadingAnchor),
-            completePasswordField.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -48),
+            usernameField.topAnchor.constraint(equalTo: passwordWhiteLine.bottomAnchor, constant: 40),
+            usernameField.leadingAnchor.constraint(equalTo: loginField.leadingAnchor),
+            usernameField.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -48),
         ])
 
-        completePasswordWhiteLine.translatesAutoresizingMaskIntoConstraints = false
+        usernameWhiteLine.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
 
-            completePasswordWhiteLine.topAnchor.constraint(equalTo: completePasswordField.bottomAnchor, constant: 5),
-            completePasswordWhiteLine.centerXAnchor.constraint(equalTo: centerXAnchor),
-            completePasswordWhiteLine.widthAnchor.constraint(equalToConstant: 320),
-            completePasswordWhiteLine.heightAnchor.constraint(equalToConstant: 1)
+            usernameWhiteLine.topAnchor.constraint(equalTo: usernameField.bottomAnchor, constant: 5),
+            usernameWhiteLine.centerXAnchor.constraint(equalTo: centerXAnchor),
+            usernameWhiteLine.widthAnchor.constraint(equalToConstant: 320),
+            usernameWhiteLine.heightAnchor.constraint(equalToConstant: 1)
         ])
 
         haveAccount.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
 
-            haveAccount.topAnchor.constraint(equalTo: completePasswordWhiteLine.bottomAnchor, constant: 30),
+            haveAccount.topAnchor.constraint(equalTo: usernameWhiteLine.bottomAnchor, constant: 30),
             haveAccount.centerXAnchor.constraint(equalTo: centerXAnchor)
         ])
 

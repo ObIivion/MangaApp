@@ -27,6 +27,7 @@ class SignInViewController: BaseViewController<SignInView>  {
         
         mainView.loginField.addTarget(self, action: #selector(textChanged), for: .editingChanged)
         mainView.passwordField.addTarget(self, action: #selector(textChanged), for: .editingChanged)
+        mainView.usernameField.addTarget(self, action: #selector(textChanged), for: .editingChanged)
         
         mainView.continueButton.addTarget(self, action: #selector(continueButtonClicked), for: .touchUpInside)
      
@@ -46,16 +47,25 @@ class SignInViewController: BaseViewController<SignInView>  {
     
     @objc func textChanged(_ sender: UITextField) {
         
-        if mainView.loginField.text?.isEmpty ?? true || mainView.passwordField.text?.isEmpty ?? true {
-            mainView.setContinueButtonEnabled(isEnabled: false)
+        if mainView.signState == .signUp {
+            if mainView.loginField.text?.isEmpty ?? true || mainView.passwordField.text?.isEmpty ?? true ||  mainView.usernameField.text?.isEmpty ?? true {
+                mainView.setContinueButtonEnabled(isEnabled: false)
+            } else {
+                mainView.setContinueButtonEnabled(isEnabled: true)
+            }
         } else {
-            mainView.setContinueButtonEnabled(isEnabled: true)
+            if mainView.loginField.text?.isEmpty ?? true || mainView.passwordField.text?.isEmpty ?? true {
+                mainView.setContinueButtonEnabled(isEnabled: false)
+            } else {
+                mainView.setContinueButtonEnabled(isEnabled: true)
+            }
         }
     }
     
     @objc func continueButtonClicked(_ sender: UIButton) {
         
         // я могу гарантировать что они не пустые, иначе не нажать кнопочку "continue"
+        let username = mainView.usernameField.text!
         let email = mainView.loginField.text!
         let password = mainView.passwordField.text!
         print("----- ПЕЧАТАЮ СОСТОЯНИЕ ВЬЮ -----")
@@ -66,11 +76,9 @@ class SignInViewController: BaseViewController<SignInView>  {
             if presenter.checkFieldsBeforeSignIn(email: email, password: password) {
                 presenter.signIn(email: email , password: password)
             } else { return }
-            
         } else {
-            let completePassword = mainView.completePasswordField.text!
-            if presenter.checkFieldsBeforeSignUp(email: email, password: password, completePassword: completePassword) {
-                presenter.signUp(email: email, password: password)
+            if presenter.checkFieldsBeforeSignUp(username: username, email: email, password: password) {
+                presenter.signUp(email: email, password: password, username: username)
             } else { return }
             
         }

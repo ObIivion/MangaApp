@@ -30,14 +30,6 @@ class AuthService: NSObject {
         }
     }
     
-    private var request: URLRequest? {
-        let header = ["Content-Type" : "application/json"]
-        var request = URLRequest(url: oAuthbaseUrl!, cachePolicy: .useProtocolCachePolicy, timeoutInterval: 10)
-        request.allHTTPHeaderFields = header
-        request.httpMethod = "post"
-        return request
-    }
-    
     func obtainingAccessToken(email: String, password: String) {
         
         print("упали в получение токена")
@@ -76,15 +68,18 @@ class AuthService: NSObject {
         task.resume()
     }
     
-    func registerUser(email: String, password: String) {
+    func registerUser(email: String, password: String, username: String) {
         
-        print("***** Упали в регистрацию ---")
+        let jsonBody: [String : Any] = ["data" : ["attributes" : ["email" : email, "name" : username, "password" : password], "type" : "users"]]
+        let jsonDataBody = try? JSONSerialization.data(withJSONObject: jsonBody)
         
         let header = ["Content-Type" : "application/vnd.api+json"]
-        let url = baseUrl?.appendingPathComponent("/users")
+        
+        let url = URL(string: "https://kitsu.io/api/edge/users")
         
         var request: URLRequest = URLRequest(url: url!)
         request.allHTTPHeaderFields = header
+        request.httpBody = jsonDataBody
         request.httpMethod = "POST"
         
         let task = URLSession.shared.dataTask(with: request) { data, response, error in

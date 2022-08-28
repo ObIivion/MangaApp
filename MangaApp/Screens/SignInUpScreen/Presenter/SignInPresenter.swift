@@ -13,10 +13,10 @@ protocol SignInUpPresenterProtocol {
     func signUpWithGoogle()
     
     func signIn(email: String, password: String)
-    func signUp(email: String, password: String)
+    func signUp(email: String, password: String, username: String)
     
     func checkFieldsBeforeSignIn(email: String, password: String) -> Bool
-    func checkFieldsBeforeSignUp(email: String, password: String, completePassword: String) -> Bool
+    func checkFieldsBeforeSignUp(username: String, email: String, password: String) -> Bool
 }
 
 import Foundation
@@ -41,14 +41,13 @@ class SignInPresenter: SignInUpPresenterProtocol {
     }
     
     func signIn(email: String, password: String) {
-        checkFieldsBeforeSignIn(email: email, password: password)
+    
         authService.obtainingAccessToken(email: email, password: password)
     }
     
-    func signUp(email: String, password: String) {
+    func signUp(email: String, password: String, username: String) {
         
-        authService.registerUser(email: email, password: password)
-        
+        authService.registerUser(email: email, password: password, username: username)
     }
     
     func checkFieldsBeforeSignIn(email: String, password: String) -> Bool {
@@ -62,7 +61,7 @@ class SignInPresenter: SignInUpPresenterProtocol {
         } else { return true }
     }
     
-    func checkFieldsBeforeSignUp(email: String, password: String, completePassword: String) -> Bool {
+    func checkFieldsBeforeSignUp(username: String, email: String, password: String) -> Bool {
         
         if !email.contains("@") || !email.contains(".") {
             view?.addAlert(title: "Email должен содержать @ и .")
@@ -70,8 +69,8 @@ class SignInPresenter: SignInUpPresenterProtocol {
         } else if password.count < 9 {
             view?.addAlert(title: "Пароль слишком короткий")
             return false
-        } else if password != completePassword {
-            view?.addAlert(title: "Пароли не совпадают")
+        } else if username.contains("@"), username.contains("!"), username.contains("."), username.contains("@") {
+            view?.addAlert(title: "Некорректное имя пользователя")
             return false
         } else { return true }
     }
