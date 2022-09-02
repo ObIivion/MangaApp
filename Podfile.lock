@@ -1,4 +1,5 @@
 PODS:
+  - Alamofire (5.6.2)
   - AppAuth (1.5.0):
     - AppAuth/Core (= 1.5.0)
     - AppAuth/ExternalUserAgent (= 1.5.0)
@@ -6,7 +7,7 @@ PODS:
   - AppAuth/ExternalUserAgent (1.5.0):
     - AppAuth/Core
   - FloatingPanel (2.5.3)
-  - GoogleSignIn (6.2.2):
+  - GoogleSignIn (6.2.3):
     - AppAuth (~> 1.5)
     - GTMAppAuth (~> 1.3)
     - GTMSessionFetcher/Core (~> 1.1)
@@ -14,34 +15,51 @@ PODS:
     - AppAuth/Core (~> 1.4)
     - GTMSessionFetcher/Core (~> 1.5)
   - GTMSessionFetcher/Core (1.7.2)
+  - Kingfisher (7.3.2)
+  - Moya (15.0.0):
+    - Moya/Core (= 15.0.0)
+  - Moya/Core (15.0.0):
+    - Alamofire (~> 5.0)
   - R.swift (6.1.0):
     - R.swift.Library (~> 5.3.0)
   - R.swift.Library (5.3.0)
+  - SnapKit (5.6.0)
 
 DEPENDENCIES:
   - FloatingPanel
   - GoogleSignIn
+  - Kingfisher (~> 7.0)
+  - Moya (~> 15.0)
   - R.swift
+  - SnapKit (~> 5.6.0)
 
 SPEC REPOS:
   trunk:
+    - Alamofire
     - AppAuth
     - FloatingPanel
     - GoogleSignIn
     - GTMAppAuth
     - GTMSessionFetcher
+    - Kingfisher
+    - Moya
     - R.swift
     - R.swift.Library
+    - SnapKit
 
 SPEC CHECKSUMS:
+  Alamofire: d368e1ff8a298e6dde360e35a3e68e6c610e7204
   AppAuth: 80317d99ac7ff2801a2f18ff86b48cd315ed465d
   FloatingPanel: 3cee815e9ded75b632543fa73ab655a1ef941452
-  GoogleSignIn: 3c68388ac221f379676e8f1cb115df3aaf73b93f
+  GoogleSignIn: f4d3939cc0d9264d7509c4b9a924a6c987e30b54
   GTMAppAuth: 4d8f864896f3646f0c33baf38a28362f4c601e15
   GTMSessionFetcher: 5595ec75acf5be50814f81e9189490412bad82ba
+  Kingfisher: 0086ad83719761ba9b2cdaf6ef4d5b4878cbae23
+  Moya: 138f0573e53411fb3dc17016add0b748dfbd78ee
   R.swift: ec98ff71c4ab2f6fd01dd077e5afd15e63a4834c
   R.swift.Library: 0fc583cb55a99e28901299cc451614cad1161962
+  SnapKit: e01d52ebb8ddbc333eefe2132acf85c8227d9c25
 
-PODFILE CHECKSUM: 4579030bd455079c8d4493ca4a11c28307a820e3
+PODFILE CHECKSUM: 258cc73c641b90b20c3bd13a93bc9fa6fc02465d
 
 COCOAPODS: 1.11.3

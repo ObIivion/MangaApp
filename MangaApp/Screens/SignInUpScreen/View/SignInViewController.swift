@@ -68,22 +68,23 @@ class SignInViewController: BaseViewController<SignInView>  {
         let username = mainView.usernameField.text!
         let email = mainView.loginField.text!
         let password = mainView.passwordField.text!
-        print("----- ПЕЧАТАЮ СОСТОЯНИЕ ВЬЮ -----")
-        print(mainView.signState)
         
-        if mainView.signState == .signIn {
+        let userDefaults = UserDefaults.standard
+        
+        switch mainView.signState {
+            case .signIn:
+                if presenter.checkFieldsBeforeSignIn(email: email, password: password) {
+                    presenter.signIn(email: email , password: password)
+                    
+                } else { return }
             
-            if presenter.checkFieldsBeforeSignIn(email: email, password: password) {
-                presenter.signIn(email: email , password: password)
-            } else { return }
-        } else {
-            if presenter.checkFieldsBeforeSignUp(username: username, email: email, password: password) {
-                presenter.signUp(email: email, password: password, username: username)
-            } else { return }
-            
+            case .signUp:
+                if presenter.checkFieldsBeforeSignUp(username: username, email: email, password: password) {
+                    presenter.signUp(email: email, password: password, username: username)
+                } else { return }
         }
     }
-    
+       
     @objc func googleSignIn(_ sender: UIButton){
         
         presenter.signInWithGoogle()

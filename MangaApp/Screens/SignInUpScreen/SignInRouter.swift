@@ -14,18 +14,16 @@ protocol SignInScreenRoutes {
     
 }
 
-class SignInRouter: SignInScreenRoutes {
-    
-    weak var viewController: UIViewController!
+class SignInRouter: BaseRouter, SignInScreenRoutes {
     
     func openUserPreferencesScreen() {
         
-//        let secondScreen = SecondModule.build(with: text).view
+        let profileInfoScreen = ProfileInfoScreen.build().view
         
-//        secondScreen.modalPresentationStyle = .popover
-//        secondScreen.modalTransitionStyle = .coverVertical
-//        viewController.present(secondScreen, animated: true, completion: nil)
-//        open user preferences
+        profileInfoScreen.modalPresentationStyle = .fullScreen
+        profileInfoScreen.modalTransitionStyle = .coverVertical
+        viewController.present(profileInfoScreen, animated: true, completion: nil)
+
     }
     
     func openTrendingScreen() {

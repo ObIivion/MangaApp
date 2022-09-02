@@ -28,6 +28,10 @@ class SignInPresenter: SignInUpPresenterProtocol {
     
     let authService = AuthService()
     
+    func continueButtonFailure() {
+        view?.addAlert(title: "Не удалось авторизоваться, повторите попытку позже")
+    }
+    
     func signInWithGoogle() {
         
         let signInConfig = GIDConfiguration(clientID: "164669230338-m3mupoemq5nv813u40v2m1l66d2g613s.apps.googleusercontent.com")
@@ -37,12 +41,17 @@ class SignInPresenter: SignInUpPresenterProtocol {
     func signUpWithGoogle() {
         
         
-        
     }
     
     func signIn(email: String, password: String) {
-    
-        authService.obtainingAccessToken(email: email, password: password)
+        
+        let userDefaults = UserDefaults.standard
+        
+        if userDefaults.string(forKey: "access_token") != nil {
+            router.openUserPreferencesScreen()
+        } else {
+            authService.obtainingAccessToken(email: email, password: password)
+        }
     }
     
     func signUp(email: String, password: String, username: String) {
