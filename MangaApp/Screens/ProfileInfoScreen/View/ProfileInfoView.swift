@@ -13,16 +13,16 @@ import Rswift
 
 class ProfileInfoView: BaseView {
     
-    private let avatarImage: UIImageView = {
+    let avatarImageView: UIImageView = {
         let view = UIImageView()
         view.backgroundColor = UIColor(red: 0.617, green: 0.617, blue: 0.617, alpha: 1)
         view.clipsToBounds = true
         return view
     }()
-    private let gradientCircleView: UIView = {
-        let view = UIView()
-        view.layer.cornerRadius = 15
-        return view
+    let gradientCircleButton: UIButton = {
+        let button = UIButton()
+        button.layer.cornerRadius = 15
+        return button
     }()
     private let gradientLayer = CAGradientLayer()
     private let pluslabel: UILabel = {
@@ -33,28 +33,28 @@ class ProfileInfoView: BaseView {
         return label
     }()
     
-    private let nameField = UITextField()
+    let nameField = UITextField()
     private let nameWhiteLine: UIView = {
         let view = UIView()
         view.backgroundColor = UIColor(red: 0.617, green: 0.617, blue: 0.617, alpha: 1)
         return view
     }()
     
-    private let slugField = UITextField()
+    let slugField = UITextField()
     private let slugWhiteLine: UIView = {
         let view = UIView()
         view.backgroundColor = UIColor(red: 0.617, green: 0.617, blue: 0.617, alpha: 1)
         return view
     }()
     
-    private let locationField = UITextField()
+    let locationField = UITextField()
     private let locationWhiteLine: UIView = {
         let view = UIView()
         view.backgroundColor = UIColor(red: 0.617, green: 0.617, blue: 0.617, alpha: 1)
         return view
     }()
     
-    private let waifuOrHusbandoField = UITextField()
+    let waifuOrHusbandoField = UITextField()
     private let waifuOrHusbandoFieldWhiteLine: UIView = {
         let view = UIView()
         view.backgroundColor = UIColor(red: 0.617, green: 0.617, blue: 0.617, alpha: 1)
@@ -79,8 +79,8 @@ class ProfileInfoView: BaseView {
         setupField(field: locationField, withText: "Write your location")
         setupField(field: waifuOrHusbandoField, withText: "Waifu or husbando?")
         
-        addSubview(avatarImage)
-        addSubview(gradientCircleView)
+        addSubview(avatarImageView)
+        addSubview(gradientCircleButton)
         addSubview(pluslabel)
         addSubview(nameField)
         addSubview(nameWhiteLine)
@@ -99,8 +99,8 @@ class ProfileInfoView: BaseView {
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        avatarImage.layer.cornerRadius = avatarImage.bounds.width / 2
-        gradientLayer.frame = gradientCircleView.bounds
+        avatarImageView.layer.cornerRadius = avatarImageView.bounds.width / 2
+        gradientLayer.frame = gradientCircleButton.bounds
     }
     
     private func setupField(field: UITextField, withText: String) {
@@ -128,35 +128,40 @@ class ProfileInfoView: BaseView {
         gradientLayer.startPoint = CGPoint(x: 1, y: 1)
         gradientLayer.endPoint = CGPoint(x: 0, y: 0)
 
-        gradientLayer.position = gradientCircleView.center
+        gradientLayer.position = gradientCircleButton.center
         gradientLayer.cornerRadius = 15
-        gradientCircleView.layer.addSublayer(gradientLayer)
-        
+        gradientCircleButton.layer.addSublayer(gradientLayer)
+    }
+    
+    func setAvatarImage(image: UIImage) {
+        avatarImageView.image = image
+        gradientCircleButton.isHidden = true
+        pluslabel.isHidden = true
     }
     
     private func setupConstraints() {
         
-        avatarImage.snp.makeConstraints { make in
+        avatarImageView.snp.makeConstraints { make in
             make.centerX.equalTo(self)
             make.top.equalTo(self.safeAreaLayoutGuide).offset(29)
             make.width.equalTo(77)
             make.height.equalTo(77)
         }
         
-        gradientCircleView.snp.makeConstraints { make in
-            make.bottom.equalTo(avatarImage.snp.bottom)
-            make.trailing.equalTo(avatarImage.snp.trailing)
+        gradientCircleButton.snp.makeConstraints { make in
+            make.bottom.equalTo(avatarImageView.snp.bottom)
+            make.trailing.equalTo(avatarImageView.snp.trailing)
             make.width.equalTo(30)
             make.height.equalTo(30)
         }
         
         pluslabel.snp.makeConstraints { make in
-            make.center.equalTo(gradientCircleView.snp.center)
+            make.center.equalTo(gradientCircleButton.snp.center)
         }
         
         nameField.snp.makeConstraints { make in
             make.centerX.equalTo(self)
-            make.top.equalTo(avatarImage.snp.bottom).offset(67)
+            make.top.equalTo(avatarImageView.snp.bottom).offset(67)
             make.width.equalTo(280)
         }
         

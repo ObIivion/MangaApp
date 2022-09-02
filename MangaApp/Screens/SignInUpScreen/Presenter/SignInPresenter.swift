@@ -26,7 +26,7 @@ class SignInPresenter: SignInUpPresenterProtocol {
     weak var view: SignInViewProtocol?
     var router: SignInRouter!
     
-    let authService = AuthService()
+    let authService = UserDataProvider()
     
     func continueButtonFailure() {
         view?.addAlert(title: "Не удалось авторизоваться, повторите попытку позже")
