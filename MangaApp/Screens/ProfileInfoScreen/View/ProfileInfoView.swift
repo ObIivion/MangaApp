@@ -68,7 +68,7 @@ class ProfileInfoView: BaseView {
         button.titleLabel?.textColor = .white
         button.backgroundColor = UIColor(red: 0.617, green: 0.617, blue: 0.617, alpha: 1)
         button.layer.cornerRadius = 25
-        button.isEnabled = false
+        button.isEnabled = true
         return button
     }()
     

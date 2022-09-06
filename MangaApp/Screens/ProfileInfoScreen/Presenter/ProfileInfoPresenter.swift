@@ -25,9 +25,12 @@ class ProfileInfoPresenter: ProfileInfoPresenterProtocol {
     }
     
     func continueButtonPressed(pickedImage: UIImage, name: String, slug: String, location: String, waifuOrHusbando: String) {
-        
-        guard let dataImage = pickedImage.jpegData(compressionQuality: 0.8) else { print("не удалось передать картинку в запрос"); return }
-        authService.updateProfile(imageData: dataImage, name: name, slug: slug, location: location, waifuOrHusbando: waifuOrHusbando)
+        print("упали в continue button pressed")
+        guard let dataImage = pickedImage.jpegData(compressionQuality: 0.1) else { print("не удалось передать картинку в запрос"); return }
+        let base64ImageString = dataImage.base64EncodedString()
+        let imageStringForRequset = "data:image/jpeg;base64,\(base64ImageString)"
+        print("BASE 64 String: \(imageStringForRequset)")
+        authService.updateProfile(base64ImageString: base64ImageString, name: name, slug: slug, location: location, waifuOrHusbando: waifuOrHusbando)
     }
     
     func avatarImagePicked(image: UIImage) {

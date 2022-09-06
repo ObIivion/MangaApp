@@ -37,6 +37,7 @@
 		A3AB631828B771F400EC5807 /* UserDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3AB631728B771F400EC5807 /* UserDataProvider.swift */; };
 		A3AB631D28B911FA00EC5807 /* UsersModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3AB631C28B911FA00EC5807 /* UsersModel.swift */; };
 		A3F812E728A562BB008619CF /* SignInPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3F812E628A562BB008619CF /* SignInPresenter.swift */; };
+		A3FE3AB028C6341E00485105 /* MoyaUserDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3FE3AAF28C6341E00485105 /* MoyaUserDataProvider.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -73,6 +74,7 @@
 		A3AB631728B771F400EC5807 /* UserDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDataProvider.swift; sourceTree = "<group>"; };
 		A3AB631C28B911FA00EC5807 /* UsersModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersModel.swift; sourceTree = "<group>"; };
 		A3F812E628A562BB008619CF /* SignInPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInPresenter.swift; sourceTree = "<group>"; };
+		A3FE3AAF28C6341E00485105 /* MoyaUserDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoyaUserDataProvider.swift; sourceTree = "<group>"; };
 		AAC56263E1F6C4A5BAE35D9F /* Pods-MangaApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MangaApp.release.xcconfig"; path = "Target Support Files/Pods-MangaApp/Pods-MangaApp.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -235,6 +237,7 @@
 			isa = PBXGroup;
 			children = (
 				A3AB631728B771F400EC5807 /* UserDataProvider.swift */,
+				A3FE3AAF28C6341E00485105 /* MoyaUserDataProvider.swift */,
 			);
 			path = Api;
 			sourceTree = "<group>";
@@ -411,6 +414,7 @@
 				A3F812E728A562BB008619CF /* SignInPresenter.swift in Sources */,
 				A38CDA7728BF80BE00CE3C47 /* ProfileInfRouter.swift in Sources */,
 				A31582FC28A2AE6A0052DDF3 /* SignInView.swift in Sources */,
+				A3FE3AB028C6341E00485105 /* MoyaUserDataProvider.swift in Sources */,
 				A3AB631D28B911FA00EC5807 /* UsersModel.swift in Sources */,
 				A38CDA6F28BF7EDD00CE3C47 /* ProfileInfoView.swift in Sources */,
 				A315831228A2B1A50052DDF3 /* R.generated.swift in Sources */,

@@ -42,10 +42,6 @@ class ProfileInfoViewController: BaseViewController<ProfileInfoView> {
 
 extension ProfileInfoViewController: ProfileInfoViewProtocol, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
-    func showImagePickerController() {
-        presenter.addPhotoButtonPressed()
-    }
-    
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         
         if let editedImage = info[UIImagePickerController.InfoKey.editedImage] as? UIImage {
