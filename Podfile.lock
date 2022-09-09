@@ -24,6 +24,7 @@ PODS:
     - R.swift.Library (~> 5.3.0)
   - R.swift.Library (5.3.0)
   - SnapKit (5.6.0)
+  - SwiftyJSON (4.3.0)
 
 DEPENDENCIES:
   - FloatingPanel
@@ -32,6 +33,7 @@ DEPENDENCIES:
   - Moya (~> 15.0)
   - R.swift
   - SnapKit (~> 5.6.0)
+  - SwiftyJSON (~> 4.0)
 
 SPEC REPOS:
   trunk:
@@ -46,6 +48,7 @@ SPEC REPOS:
     - R.swift
     - R.swift.Library
     - SnapKit
+    - SwiftyJSON
 
 SPEC CHECKSUMS:
   Alamofire: d368e1ff8a298e6dde360e35a3e68e6c610e7204
@@ -59,7 +62,8 @@ SPEC CHECKSUMS:
   R.swift: ec98ff71c4ab2f6fd01dd077e5afd15e63a4834c
   R.swift.Library: 0fc583cb55a99e28901299cc451614cad1161962
   SnapKit: e01d52ebb8ddbc333eefe2132acf85c8227d9c25
+  SwiftyJSON: 6faa0040f8b59dead0ee07436cbf76b73c08fd08
 
-PODFILE CHECKSUM: 258cc73c641b90b20c3bd13a93bc9fa6fc02465d
+PODFILE CHECKSUM: 5123f71b5a53307dd1802c287a99449a2ab9d769
 
 COCOAPODS: 1.11.3

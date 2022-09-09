@@ -20,7 +20,7 @@ class UserDataProvider: NSObject {
     private let oAuthbaseUrl = URL(string: "https://kitsu.io/api/oauth")
     private let oAuthXwwwFormUrlencoded = "application/x-www-form-urlencoded"
     
-    private var accessToken: String {
+    static var accessToken: String {
         let userDefaults = UserDefaults.standard
         if let token = userDefaults.string(forKey: "access_token") {
             return token
@@ -29,7 +29,7 @@ class UserDataProvider: NSObject {
             return ""
         }
     }
-    private var userId = "1341883"
+    static var userId = "1341883"
     
     func obtainingAccessToken(email: String, password: String) {
         
@@ -64,7 +64,7 @@ class UserDataProvider: NSObject {
             }
             let defaults = UserDefaults.standard
             defaults.set(token, forKey: "access_token")
-            print(self.accessToken)
+            print(UserDataProvider.accessToken)
         }
         task.resume()
     }
@@ -103,57 +103,33 @@ class UserDataProvider: NSObject {
     task.resume()
     }
     
-    func uploadImage(paramName: String, fileName: String, image: UIImage) {
-        let url = baseUrl?.appendingPathComponent("/users/\(userId)")
-
-        // generate boundary string using a unique per-app string
-        let boundary = UUID().uuidString
-
-        let session = URLSession.shared
-
-        // Set the URLRequest to POST and to the specified URL
-        var urlRequest = URLRequest(url: url!)
-        urlRequest.httpMethod = "PATCH"
-
-        // Set Content-Type Header to multipart/form-data, this is equivalent to submitting form data with file upload in a web browser
-        // And the boundary is also set here
-        urlRequest.setValue("multipart/form-data; boundary=\(boundary)", forHTTPHeaderField: "Content-Type")
-
-        var data = Data()
-
-        // Add the image data to the raw http request data
-        data.append("\r\n--\(boundary)\r\n".data(using: .utf8)!)
-        data.append("Content-Disposition: form-data; name=\"\(paramName)\"; filename=\"\(fileName)\"\r\n".data(using: .utf8)!)
-        data.append("Content-Type: image/jpeg\r\n\r\n".data(using: .utf8)!)
-        data.append(image.jpegData(compressionQuality: 1)!)
-
-        data.append("\r\n--\(boundary)--\r\n".data(using: .utf8)!)
-
-        // Send a POST request to the URL, with the data we created earlier
-        session.uploadTask(with: urlRequest, from: data, completionHandler: { responseData, response, error in
-            if error == nil {
-                let jsonData = try? JSONSerialization.jsonObject(with: responseData!, options: .allowFragments)
-                if let json = jsonData as? [String: Any] {
-                    print(json)
-                }
-            }
-        }).resume()
-    }
-    
-    func updateProfile(base64ImageString: String, name: String, slug: String, location: String, waifuOrHusbando: String) {
+    func updateProfile(image: UIImage, name: String, slug: String, location: String, waifuOrHusbando: String) {
         
         print("упали в updateProfile")
         
-        let jsonBody: [String : Any] = [
-            "data" : [ "id" : userId,
-                       "attributes" : ["avatar" : base64ImageString, "name" : name, "slug" : slug, "location" : location, "waifuOrHusbando" : waifuOrHusbando],
-//                       "relationships" : ["postPinned" : ["data" : nil]],
-                      "type" : "users"]]
+        var jsonBody: [String : Any]
+        
+        if let dataImage = image.jpegData(compressionQuality: 0.7) {
+            let base64ImageString = dataImage.base64EncodedString()
+            let imageStringForRequset = "data:image/jpeg;base64," + base64ImageString
+            jsonBody = [
+                "data" : [ "id" : UserDataProvider.userId,
+                           "attributes" : ["avatar" : imageStringForRequset, "name" : name, "slug" : slug, "location" : location, "waifuOrHusbando" : waifuOrHusbando],
+                          "type" : "users"]]
+        } else {
+            print("Нет картинки")
+            jsonBody = [
+                "data" : [ "id" : UserDataProvider.userId,
+                           "attributes" : ["name" : name, "slug" : slug, "location" : location, "waifuOrHusbando" : waifuOrHusbando],
+                          "type" : "users"]]
+        }
+        
+        
         let jsonDataBody = try? JSONSerialization.data(withJSONObject: jsonBody)
         
-        let header = ["Content-Type" : contentType, "authorization" : "Bearer \(accessToken)"]
+        let header = ["Content-Type" : contentType, "authorization" : "Bearer \(UserDataProvider.accessToken)"]
         
-        let url = baseUrl?.appendingPathComponent("/users/\(userId)")
+        let url = baseUrl?.appendingPathComponent("/users/\(UserDataProvider.userId)")
         
         var request: URLRequest = URLRequest(url: url!)
         request.allHTTPHeaderFields = header

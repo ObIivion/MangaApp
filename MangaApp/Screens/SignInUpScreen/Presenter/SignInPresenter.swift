@@ -26,7 +26,8 @@ class SignInPresenter: SignInUpPresenterProtocol {
     weak var view: SignInViewProtocol?
     var router: SignInRouter!
     
-    let authService = UserDataProvider()
+    let userDataProvider = UserDataProvider()
+    let moyaUserDataProvider = MoyaUserDataProvider()
     
     func continueButtonFailure() {
         view?.addAlert(title: "Не удалось авторизоваться, повторите попытку позже")
@@ -50,13 +51,16 @@ class SignInPresenter: SignInUpPresenterProtocol {
         if userDefaults.string(forKey: "access_token") != nil {
             router.openUserPreferencesScreen()
         } else {
-            authService.obtainingAccessToken(email: email, password: password)
+            print("Moya === get access token ===")
+            moyaUserDataProvider.moyaGetAccessToken(email: email, password: password)
         }
     }
     
     func signUp(email: String, password: String, username: String) {
         
-        authService.registerUser(email: email, password: password, username: username)
+        print("sign up in presenter")
+        moyaUserDataProvider.moyaRegisterUser(email: email, password: password, username: username)
+        //userDataProvider.registerUser(email: email, password: password, username: username)
     }
     
     func checkFieldsBeforeSignIn(email: String, password: String) -> Bool {

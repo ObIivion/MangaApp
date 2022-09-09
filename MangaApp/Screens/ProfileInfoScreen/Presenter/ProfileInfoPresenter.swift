@@ -18,19 +18,18 @@ class ProfileInfoPresenter: ProfileInfoPresenterProtocol {
     
     weak var view: ProfileInfoViewProtocol!
     var router: ProfileInfoScreenRoutesProtocol!
-    let authService = UserDataProvider()
+    let userDataProvier = UserDataProvider()
+    let moyaUserDataProvider = MoyaUserDataProvider()
  
     func addPhotoButtonPressed() {
         router!.showImagePickerController()
     }
     
     func continueButtonPressed(pickedImage: UIImage, name: String, slug: String, location: String, waifuOrHusbando: String) {
-        print("упали в continue button pressed")
-        guard let dataImage = pickedImage.jpegData(compressionQuality: 0.5) else { print("не удалось передать картинку в запрос"); return }
-        let base64ImageString = dataImage.base64EncodedString()
-        let imageStringForRequset = "data:image/jpeg;base64," + base64ImageString
         
-        authService.updateProfile(base64ImageString: imageStringForRequset, name: name, slug: slug, location: location, waifuOrHusbando: waifuOrHusbando)
+        print("continueButtonPressed MoyaUpdateProfile")
+        moyaUserDataProvider.moyaUpdateProfile(image: pickedImage, name: name, slug: slug, location: location, waifuOrHusbando: waifuOrHusbando)
+        //userDataProvier.updateProfile(image: pickedImage, name: name, slug: slug, location: location, waifuOrHusbando: waifuOrHusbando)
     }
     
     func avatarImagePicked(image: UIImage) {
