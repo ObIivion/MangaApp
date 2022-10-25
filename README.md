@@ -10,5 +10,5 @@ Application for reading Manga
 - Google OAuth
 - URLSession, Moya для получения данных
 - SwiftyJSON, JSONSerialization, Codable
-- анимированное измененеи Constraints
-- MVP + Provider
+- анимированное изменение Constraints
+- MVP, Module builder with Router and Provider 
